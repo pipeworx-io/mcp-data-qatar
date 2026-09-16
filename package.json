@@ -1,0 +1,28 @@
+{
+  "name": "@pipeworx/mcp-data-qatar",
+  "version": "0.1.0",
+  "description": "Qatar government open data — population, economic indicators, trade, and SDG social statistics from Qatar's national open data portal. Bilingual (English/Arabic) field labels. Keyless.",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "bin": {
+    "mcp-data-qatar": "bin/cli.js"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "data-qatar"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-data-qatar.git"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "tsx": "^4.19.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@cloudflare/workers-types": "^4.20260405.1"
+  }
+}
