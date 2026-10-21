@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-data-qatar",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Qatar government open data — population, economic indicators, trade, and SDG social statistics from Qatar's national open data portal. Bilingual (English/Arabic) field labels. Keyless.",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-b6bf481d4856bb58eef9a609e1e867352d0cfb564330ff0773dfb8bca21abfbd",
-    "sourceCommit": "56d3c46c09bb3078ffdbdbca992a93f406bcd382"
+    "sourceHash": "v1-193618961faf04665a94cdc1af555b9e3091ebe34720cbb2541ee44c53cbd7fd",
+    "sourceCommit": "8355bf3d1eece256a62a89dba2278e7a77bebe07"
   }
 }
