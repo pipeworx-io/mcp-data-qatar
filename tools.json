@@ -1,0 +1,83 @@
+[
+  {
+    "name": "search_datasets",
+    "description": "Search Qatar government open data for datasets by keyword (population, economic indicators, trade, labor, environment, SDG social statistics). Returns dataset_ids (pass to query/dataset_info), bilingual English/Arabic titles, and record counts.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Keyword(s) to search dataset titles/descriptions, e.g. \"population\"."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max datasets (1-100, default 20)."
+        },
+        "offset": {
+          "type": "number",
+          "description": "Pagination offset (default 0)."
+        }
+      }
+    }
+  },
+  {
+    "name": "dataset_info",
+    "description": "Get metadata for one Qatar government open data dataset (field schema with English/Arabic labels, record count, description) — call before query to learn the column names.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "dataset_id": {
+          "type": "string",
+          "description": "Dataset id from search_datasets."
+        }
+      },
+      "required": [
+        "dataset_id"
+      ]
+    }
+  },
+  {
+    "name": "query",
+    "description": "Query records from a Qatar government open data dataset with ODSQL. Filter (where), aggregate (group_by/select), sort (order_by), paginate (limit/offset). Field labels come back as label_en/label_ar — dataset_ids and field names stay in their native form.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "dataset_id": {
+          "type": "string",
+          "description": "Dataset id from search_datasets."
+        },
+        "query": {
+          "type": "string",
+          "description": "Free-text keyword across all fields (optional)."
+        },
+        "where": {
+          "type": "string",
+          "description": "ODSQL filter, e.g. `year >= 2020` (overrides query)."
+        },
+        "select": {
+          "type": "string",
+          "description": "ODSQL select/aggregation, e.g. `count(*) as n, sum(amount)`."
+        },
+        "group_by": {
+          "type": "string",
+          "description": "ODSQL group_by field(s)."
+        },
+        "order_by": {
+          "type": "string",
+          "description": "Sort, e.g. `year desc`."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max records (1-100, default 20)."
+        },
+        "offset": {
+          "type": "number",
+          "description": "Pagination offset (default 0)."
+        }
+      },
+      "required": [
+        "dataset_id"
+      ]
+    }
+  }
+]
